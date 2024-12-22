@@ -96,7 +96,7 @@ def main():
     st.write("### Transcription:")
     st.write(transcription)
     
-    entities = ["Waiting for the file...","Waiting for the file...","Waiting for the file..."]
+    entities = [["Waiting for the file..."],["Waiting for the file..."],["Waiting for the file..."]]
     if transcription != "Waiting for the file...":
         st.info("Extracting the entities. This may take a minute.")
         with st.spinner("Extraction in progress..."):
