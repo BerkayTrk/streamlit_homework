@@ -87,13 +87,16 @@ def main():
     # Fill here to create the streamlit application by using the functions you filled
     st.write("## Upload your Audio File down Below")
     audio_file = st.file_uploader(label="Audio File", type=["wav"])
+
+    transcription = "Waiting for the file..."
     if audio_file:
         st.info("Transcribing the audio file. This may take a minute.")
         with st.spinner("Transcription in progress..."):
             transcription = transcribe_audio(uploaded_file=audio_file)
     st.write("### Transcription:")
     st.write(transcription)
-
+    
+    entities = "Waiting for the file..."
     if transcription:
         st.info("Extracting the entities. This may take a minute.")
         with st.spinner("Extraction in progress..."):
