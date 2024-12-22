@@ -97,7 +97,7 @@ def main():
     st.write(transcription)
     
     entities = "Waiting for the file..."
-    if transcription:
+    if transcription != "Waiting for the file...":
         st.info("Extracting the entities. This may take a minute.")
         with st.spinner("Extraction in progress..."):
             entities = extract_entities(transcription, load_ner_model())
